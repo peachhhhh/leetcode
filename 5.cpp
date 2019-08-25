@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+//manache 马拉车方法
 string longestPalindrome(string str)
 {
     
