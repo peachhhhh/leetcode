@@ -130,8 +130,5 @@ int main()
     cout << "------" << endl;
     cout << findMedianSortedArrays(a, b) << endl;
     cout << "------" << endl;
-    // if(1 < 2 || cout<<"ssss"<<endl){
-    //     cout<<"cccc"<<endl;
-    // }
     return 0;
 }
