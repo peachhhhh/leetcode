@@ -18,7 +18,6 @@ bool isMatch(string s, string p)
             dp[0][j] = false;
         }
     }
-
     for (int i = 1; i <= m; i++)
     {
         for (int j = 1; j <= n; j++)
