@@ -10,6 +10,7 @@ void swap4(int &a, int &b, int &c, int &d)
     b = a;
     a = buff;
 }
+//也可以先转置，再左右交换列
 void rotate(vector<vector<int>> &matrix)
 {
     int n = matrix.size();
