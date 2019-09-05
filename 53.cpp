@@ -5,7 +5,7 @@ using namespace std;
 
 int maxSubArray(vector<int> &nums)
 {
-    int maxsum = 0;
+    int maxsum = nums[0];
     int cursum = 0;
     for(auto i : nums){
         if(cursum > 0){
