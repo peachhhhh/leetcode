@@ -3,7 +3,7 @@
 #include <algorithm>
 using namespace std;
 
-//动态规划
+//动态规划,最小路径和
 int minPathSum(vector<vector<int>> &grid)
 {
     int m = grid.size(), n = grid[0].size();
@@ -13,15 +13,15 @@ int minPathSum(vector<vector<int>> &grid)
     {
         for (int j = 0; j < n; j++)
         {
-            if (i == 0)
+            if (i == 0 && j != 0)
             {
                 dp[i][j] = dp[i][j - 1] + grid[i][j];
             }
-            else if (j == 0)
+            else if (i != 0 && j == 0)
             {
                 dp[i][j] = dp[i - 1][j] + grid[i][j];
             }
-            else
+            else if (i != 0 && j != 0)
             {
                 dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j];
             }
