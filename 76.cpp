@@ -34,9 +34,9 @@ string minWindow(string s, string t)
             {
                 count--;
             }
-            i++;
+            i++;//左指针往右滑动
         }
-        j++;
+        j++;//右指针往右滑动
     }
     return subs;
 }
