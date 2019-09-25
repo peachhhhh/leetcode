@@ -13,6 +13,7 @@ struct TreeNode
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
+//右子树接左子树的最右节点，然后左子树换到右子树，左子树置空。
 void flatten(TreeNode *root)
 {
     while (root != nullptr)
