@@ -11,7 +11,7 @@ class LRUCache
 private:
     int cap;
     list<pair<int, int>> l;
-    unordered_map<int, list<pair<int, int>>::iterator> map;
+    unordered_map<int, list<pair<int, int>>::iterator> m;
 
 public:
     LRUCache(int capacity)
@@ -21,30 +21,28 @@ public:
 
     int get(int key)
     {
-        if (map.find(key) == map.end())
+        if (m.find(key) == m.end())
         {
             return -1;
         }
-        l.push_front(*map[key]);
-        l.erase(map[key]);
-        map[key] = l.begin();
-        return map[key]->second;
+        l.push_front(*m[key]);
+        l.erase(m[key]);
+        m[key] = l.begin();
+        return m[key]->second;
     }
 
     void put(int key, int value)
     {
-        if (map.find(key) != map.end())
+        if (m.find(key) != m.end())
         {
-            l.erase(map[key]);
-            map.erase(key);
+            l.erase(m[key]);
+            m.erase(key);
         }
-        pair<int, int> p(key, value);
-        l.push_front(p);
-        pair<int, list<pair<int, int>>::iterator> pp(key, l.begin());
-        map.insert(pp);
-        if (map.size() > this->cap)
+        l.push_front(make_pair(key, value));
+        m.insert(make_pair(key, l.begin()));
+        if (m.size() > this->cap)
         {
-            map.erase(l.back().first);
+            m.erase(l.back().first);
             l.pop_back();
         }
     }
