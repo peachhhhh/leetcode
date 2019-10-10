@@ -8,12 +8,7 @@ int maxSubArray(vector<int> &nums)
     int maxsum = nums[0];
     int cursum = 0;
     for(auto i : nums){
-        if(cursum > 0){
-            cursum += i;
-        }
-        else{
-            cursum = i;//若当前和小于0，从i位置重新开始计算和
-        }
+        cursum = max(i, cursum + i);
         maxsum = max(cursum, maxsum);
     }
     return maxsum;
