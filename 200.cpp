@@ -4,7 +4,7 @@
 #include <queue>
 using namespace std;
 
-//bfs广度优先遍历
+//基于队列的广度优先搜索
 int numIslands(vector<vector<char>> &grid)
 {
     if (grid.empty())
@@ -23,7 +23,7 @@ int numIslands(vector<vector<char>> &grid)
                 res++;
                 grid[i][j] = '0';
                 q.push({i, j});
-                while (!q.empty()) //从一个点开始，用队列实现广度优先遍历
+                while (!q.empty()) //从一个点开始，用队列实现广度优先遍历，遍历过的点改为‘0’
                 {
                     int f = q.front().first, s = q.front().second;
                     q.pop();
