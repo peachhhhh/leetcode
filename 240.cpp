@@ -3,7 +3,7 @@
 #include <algorithm>
 using namespace std;
 
-//贪心，从左下角出发
+//贪心，从左下角出发，时间复杂度o(m+n)
 bool searchMatrix(vector<vector<int>> &matrix, int target)
 {
     if (matrix.empty() || matrix[0].empty())
