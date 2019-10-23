@@ -45,8 +45,6 @@ public:
 
 void test()
 {
-    Codec c;
-    cout << c.serialize(c.deserialize("1 2 3 NULL NULL 4 5 NULL NULL NULL NULL "));
 }
 
 int main()
