@@ -4,7 +4,7 @@
 #include <stack>
 using namespace std;
 
-//栈
+//栈，双栈，一个存数字，一个存当前字符串，遇到'['进栈，遇到']'则更新栈顶并记录栈顶然后出栈
 string decodeString(string s)
 {
     stack<string> ss;
